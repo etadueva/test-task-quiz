@@ -1,0 +1,30 @@
+{
+  "name": "test-task-quiz",
+  "version": "1.0.0",
+  "description": "тестовое задание quiz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etadueva/test-task-quiz.git"
+  },
+  "keywords": [
+    "1535"
+  ],
+  "author": "Екатерина Ле",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/etadueva/test-task-quiz/issues"
+  },
+  "homepage": "https://github.com/etadueva/test-task-quiz#readme",
+  "dependencies": {
+    "webpack": "^5.80.0"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "style-loader": "^3.3.2",
+    "webpack-cli": "^5.0.2"
+  }
+}
