@@ -6,8 +6,113 @@
     <link href="./fonts/Onest-Regular.woff2" as="font" crossorigin="anonymous">
   </head>
   <body>
-    <h1 class="title">Hello World</h1>
-    <img src="./img/image.png" alt="Другая картинка.">
-    <img src="./img/arrow.svg" alt="Стрелка.">
+    <div class="page-wrapper">
+      <h1 class="title">Тестовое задание</h1>
+      <section class="quiz container">
+        <div class="quiz__description">
+          <h2 class="quiz__title">Подберём вуз мечты</h2>
+          <span class="quiz__intro">Ответьте на&nbsp;8 простых вопросов, и&nbsp;мы составим список наболее подходящих для&nbsp;вас вузов</span>
+          <img class="quiz__image" src="./img/image.png" alt="Другая картинка.">
+        </div>
+        <div class="quiz__content">
+          <form action="" method="post" class="quiz__form">
+            <div class="progress_bar">
+              <div class="progress"></div>
+            </div>
+            <span class="quiz__counter">Шаг&nbsp;<span class="quiz__counter-current">1</span>/<span class="quiz__counter-all">0</span></span>
+            <div class="quiz__questions">
+              <fieldset class="quiz__block quiz__block--big active">
+                <legend class="quiz__question">Для кого вы ищете учебное заведение?</legend>
+                <label class="quiz__answer quiz__answer" for="contactChoice1">
+                  <span>Себе</span>
+                  <input class="quiz__input-radio" type="radio" id="contactChoice1" name="for" value="myself">
+                </label>
+                <label class="quiz__answer" for="contactChoice2">
+                  <span>Супругу / супруге</span>
+                  <input class="quiz__input-radio" type="radio" id="contactChoice2" name="for" value="spouse">
+                </label>
+                <label class="quiz__answer" class="quiz__answer" for="contactChoice3">
+                  <span>Родственнику</span>
+                  <input class="quiz__input-radio" type="radio" id="contactChoice3" name="for" value="relative">
+                </label>
+                <label class="quiz__answer" for="contactChoice4">
+                  <span>Коллеге</span>
+                  <input class="quiz__input-radio" type="radio" id="contactChoice4" name="for" value="colleague">
+                </label>
+                <label class="quiz__answer" for="contactChoice5">
+                  <span>Ребенку</span>
+                  <input class="quiz__input-radio" type="radio" id="contactChoice5" name="for" value="child">
+                </label>
+                <label class="quiz__answer" for="contactChoice6">
+                  <span>Другое</span>
+                  <input class="quiz__input-radio" type="radio" id="contactChoice6" name="for" value="other">
+                </label>
+              </fieldset>
+              <div class="quiz__block">
+                <h3 class="quiz__question">В каком городе планируете поступать?</h3>
+                <label for="data2">
+                  <input type="text" placeholder="Введите данные2" id="data2" class="input_frm">
+                </label>
+              </div>
+              <div class="quiz__block">
+                <h3 class="quiz__question">Какое образование уже есть?</h3>
+                <label for="data3">
+                  <input type="text" placeholder="Введите данные3" id="data3" class="input_frm">
+                </label>
+              </div>
+              <div class="quiz__block">
+                <h3 class="quiz__question">Куда планируете поступать?</h3>
+                <label for="data3">
+                  <input type="text" placeholder="Введите данные3" id="data3" class="input_frm">
+                </label>
+              </div>
+              <div class="quiz__block">
+                <h3 class="quiz__question">Какую форму обучения предпочитаете?</h3>
+                <label for="data3">
+                  <input type="text" placeholder="Введите данные3" id="data3" class="input_frm">
+                </label>
+              </div>
+              <div class="quiz__block">
+                <h3 class="quiz__question">Рассматриваете платное обучение?</h3>
+                <label for="data3">
+                  <input type="text" placeholder="Введите данные3" id="data3" class="input_frm">
+                </label>
+              </div>
+              <div class="quiz__block">
+                <h3 class="quiz__question">Какая специальность интересует?</h3>
+                <label for="data3">
+                  <input type="text" placeholder="Введите данные3" id="data3" class="input_frm">
+                </label>
+              </div>
+              <div class="quiz__block">
+                <h3 class="quiz__question">Как скоро планируете поступать?</h3>
+                <label for="data3">
+                  <input type="text" placeholder="Введите данные3" id="data3" class="input_frm">
+                </label>
+              </div>
+              <div class="quiz__block">
+                <h3 class="quiz__question">Ваша подборка готова! 🥳 Куда нам отправить её?</h3>
+                <label for="data4">
+                  <input type="text" placeholder="Введите данные4" id="data4" class="input_frm">
+                  <button type="submit" class="quiz__button quiz__button--submit" id="form_btn">Отправить</button>
+                </label>
+              </div>
+            </div>
+            <div class="modal_item-footer">
+              <div class="quiz_blockControl">
+                <button type="button" class="quiz__button quiz__button--prev">
+                  <img class="quiz__button-icon" src="./img/prev.svg" width="16" height="16" alt="Кнопка назад.">
+                  <span class="quiz__button-text">Назад</span>
+                </button>
+                <button class="quiz__button quiz__button--next" type="button" width="16" height="16" class="quiz__button quiz__button--next">
+                  <span class="quiz__button-text">Далее</span>
+                  <img class="quiz__button-icon" src="./img/next.svg" alt="Кнопка далее.">
+                </button>
+              </div>
+            </div>
+        </form>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
