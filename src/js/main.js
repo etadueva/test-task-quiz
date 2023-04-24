@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
       let progress = 0;
       let count = 0;
       let progressPercent = 100 / (quizAll.length - 1);
-      console.log(progressPercent)
 
       initProgress();
       removeBtn();
@@ -45,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
           currentQ.textContent++;
           count++
           progress += Number(progressPercent.toFixed(3));
-          console.log(progress)
           initQuiz();
           initProgress();
           removeBtn();
@@ -56,18 +54,18 @@ document.addEventListener("DOMContentLoaded", function () {
           count--
           currentQ.textContent--;
           progress -= Number(progressPercent.toFixed(3));
-          console.log(progress)
           initQuiz();
           initProgress();
           removeBtn();
+          nextBtn.removeAttribute('disabled');
       })
 
       function initQuiz() {
           quizAll.forEach((element, i) => {
-              element.classList.remove('active')
+              element.classList.remove('active');
               if (i === count) {
-                  element.classList.add('active')
-              }
+                  element.classList.add('active');
+              };
           })
       }
 
@@ -85,25 +83,33 @@ document.addEventListener("DOMContentLoaded", function () {
               nextBtn.style.display = 'none';
               PrevBtn.style.display = 'none'
           } else if (count !== quizAll.length) {
-              nextBtn.style.display = 'flex'
+              nextBtn.style.display = 'flex';
+              let quizActive = quiz_form.querySelector('.quiz__block.active');
+              let labelsActive = quizActive.querySelectorAll('.quiz__answer--checked');
+              if (labelsActive.length > 0) {
+                nextBtn.removeAttribute('disabled');
+              } else {
+                nextBtn.setAttribute('disabled', true)
+              }
           }
       }
   }
   // QUIZ THE END
 
-  const inputs = document.querySelectorAll('.quiz__input-radio');
+  const inputs = document.querySelectorAll('.quiz__item');
   inputs.forEach((input) => {
-    input.addEventListener('change', () => {
-      const labelsRadio = document.querySelectorAll('.quiz__answer');
-      labelsRadio.forEach((label) => {
-        const input = label.querySelector('.quiz__input-radio')
-        if(input.checked) {
-          label.classList.add('quiz__answer--checked');
-        } else {
-          label.classList.remove('quiz__answer--checked');
-        }
-      })
-        
-    });
+      input.addEventListener('change', () => {
+          let nextBtn = document.querySelector('.quiz__button--next');
+          const labelsRadio = document.querySelectorAll('.quiz__answer');
+          labelsRadio.forEach((label) => {
+              const input = label.querySelector('.quiz__item');
+              if(input.checked) {
+                  label.classList.add('quiz__answer--checked');
+                  nextBtn.removeAttribute('disabled');
+              } else {
+                  label.classList.remove('quiz__answer--checked');
+              }
+          });
+      });
   })
 });
