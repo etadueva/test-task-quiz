@@ -16,8 +16,8 @@
         </div>
         <div class="quiz__content">
           <form action="" method="post" class="quiz__form">
-            <div class="progress_bar">
-              <div class="progress"></div>
+            <div class="quiz__progress-bar">
+              <div class="quiz__progress"></div>
             </div>
             <span class="quiz__counter">Шаг&nbsp;<span class="quiz__counter-current">1</span>/<span class="quiz__counter-all">0</span></span>
             <div class="quiz__questions">
@@ -188,8 +188,8 @@
                 </div>
               </fieldset>
             </div>
-            <div class="modal_item-footer">
-              <div class="quiz_blockControl">
+            <div class="quiz__footer">
+              <div class="quiz__block-control">
                 <button type="button" class="quiz__button quiz__button--prev">
                   <img class="quiz__button-icon" src="./img/prev.svg" width="16" height="16" alt="Кнопка назад.">
                   <span class="quiz__button-text">Назад</span>
@@ -200,7 +200,12 @@
                 </button>
               </div>
             </div>
-        </form>
+          </form>
+          <div class="quiz__message quiz__message-none">
+            <img class="quiz__image" src="./img/done.png"  width="56" height="56" alt="Готово.">
+            <h3 class="quiz__message-title">Отлично, спасибо!</h3>
+            <span class="quiz__message-text">Мы&nbsp;отправили подборку вам&nbsp;на&nbsp;почту. Если подборка не&nbsp;приходит — проверьте спам, возможно, она&nbsp;попала туда.</span>
+          </div>
         </div>
       </section>
     </div>
