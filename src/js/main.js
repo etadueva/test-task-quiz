@@ -35,6 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           nextBtn.setAttribute('disabled', true)
         }
+        let select = quizActive.querySelector('.quiz__item--select');
+        if (select && select.value !== '') {
+          nextBtn.removeAttribute('disabled');
+        }
       }
     }
 
@@ -89,18 +93,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   })
 
-  // const buttonSubmit = document.querySelector('.quiz__button--submit');
-  // buttonSubmit.addEventListener('click', () => {
-  //   form.addEventListener('submit', (event) => {
-  //     event.preventDefault(); // отменяем стандартное поведение браузера
-    
-  //     // отправка данных формы
-  //     // ...
-    
-  //     // отображение сообщения
-  //     quiz_form.style.display = 'none';
-  //     const message = document.querySelector('.quiz__message');
-  //     message.classList.remove('quiz__message-none')
-  //   });
-  // });
+  quiz_form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Отменяем стандартное поведение браузера
+  
+    const formData = new FormData(quiz_form); // Получаем данные формы
+  
+    const xhr = new XMLHttpRequest(); // Создаем объект XMLHttpRequest
+    xhr.open("GET", "https://echo.htmlacademy.ru", true); // Конфигурируем его
+  
+    xhr.onload = function() { // По завершению запроса
+      if (this.status === 200) { // Если все ок
+        let quiz_form = document.querySelector('.quiz__form');
+        quiz_form.style.display = 'none';
+        const message = document.querySelector('.quiz__message');
+        message.classList.remove('quiz__message-none') // Выводим ответ сервера
+      }
+    };
+  
+    xhr.send(formData); // Отправляем данные формы на сервер
+  });
 });

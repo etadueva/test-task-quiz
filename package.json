@@ -100,6 +100,7 @@
     "webpack-sources": "^3.2.3",
     "which": "^2.0.2",
     "wildcard": "^2.0.0",
+    "xmlhttprequest": "^1.8.0",
     "yallist": "^4.0.0"
   },
   "devDependencies": {
